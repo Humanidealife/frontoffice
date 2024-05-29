@@ -33,7 +33,8 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        PrintWriter out = response.getWriter();
+        out.print("<html><body><h1>OnlineStore, votre boutique multimédia en ligne</h1></body></html>");
     }
 
 
