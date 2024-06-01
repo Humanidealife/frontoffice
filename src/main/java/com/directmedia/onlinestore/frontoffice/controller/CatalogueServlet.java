@@ -4,6 +4,8 @@
  */
 package com.directmedia.onlinestore.frontoffice.controller;
 
+import com.directmedia.onlinestore.core.entity.Catalogue;
+import com.directmedia.onlinestore.core.entity.Work;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -33,8 +35,15 @@ public class CatalogueServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        PrintWriter out = response.getWriter();
+        out.print("<html><body><h1>Oeuvres au catalogue</h1>");
+        
+        for (Work work : Catalogue.listOfWorks) {
+            out.println(work.getTitle()+ "("+work.getRelease()+ ")");
+        }
+        
+        out.print("</body></html>");
     }
-
+        
 
 }
