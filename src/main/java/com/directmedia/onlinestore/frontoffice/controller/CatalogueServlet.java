@@ -73,10 +73,10 @@ public class CatalogueServlet extends HttpServlet {
         Catalogue.listOfWorks.add(leGendarmeDeSaintTropez);
         }
         
-        out.print("<html><body><h1>Oeuvres au catalogue</h1>");
+        out.print("<html><body><h1>Oeuvres au catalogue</h1><BR/><BR/>");
         
         for (Work work : Catalogue.listOfWorks) {
-            out.println(work.getTitle()+ "("+work.getRelease()+ ")");
+            out.println(work.getTitle()+ "("+work.getRelease()+ ")<BR/>");
         }
         
         out.print("</body></html>");
