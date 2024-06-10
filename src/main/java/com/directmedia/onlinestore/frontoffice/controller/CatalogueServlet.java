@@ -75,8 +75,9 @@ public class CatalogueServlet extends HttpServlet {
         
         out.print("<html><body><h1>Oeuvres au catalogue</h1><BR/><BR/>");
         
+        //Les oeuvres qui sont affihées ici doivent devenir cliquables
         for (Work work : Catalogue.listOfWorks) {
-            out.println(work.getTitle()+ "("+work.getRelease()+ ")<BR/>");
+            out.println("<a href=\"work-details?id=" + work.getId() + "\">" + work.getTitle()+ "("+work.getRelease()+ ")</a><BR/>");
         }
         
         out.print("</body></html>");
