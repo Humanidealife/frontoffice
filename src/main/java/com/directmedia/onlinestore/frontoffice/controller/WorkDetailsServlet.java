@@ -55,7 +55,7 @@ public class WorkDetailsServlet extends HttpServlet {
         //On va d'abod déclarer une variable "work" pour commencer
         Work work = null;
         //On va itérer sur la liste des oeuvres du catalogue, 
-        for (Work nextWork : Catalogue.listofWorks){
+        for (Work nextWork : Catalogue.listOfWorks){
             //puis on va faire un "if"
             if (nextWork.getId()== Long.parseLong(id)){
                 //Cela signifie que l'on trouve l'oeuvre recherchée
@@ -71,13 +71,13 @@ public class WorkDetailsServlet extends HttpServlet {
         out.print("<html><body><h1>Descriptif de l'oeuvre</h1>");
         
         //On va avoir 5 propriétés à afficher
-        out.print("Titre : <BR/>");
-        out.print("Année de parution : <BR/>");
-        out.print("Genre : <BR/>");
-        out.print("Artiste : <BR/>");
-        out.print("Résumé : <BR/>");
+        
+        //On va maintenant utiliser la varaible "work" ici : 
+        out.print("Titre : " + work.getTitle() + "<BR/>");
+        out.print("Année de parution : "+ work.getRelease() + "<BR/>");
+        out.print("Genre : "+ work.getGenre() + "<BR/>");
+        out.print("Artiste : " + work.getMainArtist().getName() +"<BR/>");
+        out.print("Résumé : " + work.getSummary() + "<BR/>");
         out.print("</body></html>");
     }
-
-
 }
