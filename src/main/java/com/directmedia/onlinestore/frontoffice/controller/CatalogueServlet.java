@@ -67,6 +67,11 @@ public class CatalogueServlet extends HttpServlet {
         bad.setGenre("Pop");
         leGendarmeDeSaintTropez.setGenre("Comédie");
         
+        //Il nous reste à attribuer un "id" pur chaque oeuvre. 
+        minorityReport.setId(1);
+        bad.setId(2);
+        leGendarmeDeSaintTropez.setId(3);
+        
         //Il ne ous reste à rajouter ces oeuvres au "Catalogue"
         Catalogue.listOfWorks.add(minorityReport);
         Catalogue.listOfWorks.add(bad);
