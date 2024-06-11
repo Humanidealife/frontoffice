@@ -65,7 +65,7 @@ public class WorkDetailsServlet extends HttpServlet {
             }
         }
         //On va bien sûr faire en sorte que dans le catalogue le lien cliquable fournit cet "id", on va faire cela ultérieurement
-        
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         //Le titre sera 
         out.print("<html><body><h1>Descriptif de l'oeuvre</h1>");
