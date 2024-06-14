@@ -68,9 +68,10 @@ public class CatalogueServlet extends HttpServlet {
         leGendarmeDeSaintTropez.setGenre("Comédie");
         
         //Il nous reste à attribuer un "id" pur chaque oeuvre. 
-        minorityReport.setId(1);
-        bad.setId(2);
-        leGendarmeDeSaintTropez.setId(3);
+        //Cela n'est plus nécessaire depuis exo6, puisuque l'on a ajouté "lastId" dans la Class "Work" dans le module "core"
+        //minorityReport.setId(1);
+        //bad.setId(2);
+        //leGendarmeDeSaintTropez.setId(3);
         
         //Il ne ous reste à rajouter ces oeuvres au "Catalogue"
         Catalogue.listOfWorks.add(minorityReport);
