@@ -78,6 +78,19 @@ public class WorkDetailsServlet extends HttpServlet {
         out.print("Genre : "+ work.getGenre() + "<BR/>");
         out.print("Artiste : " + work.getMainArtist().getName() +"<BR/>");
         out.print("Résumé : " + work.getSummary() + "<BR/>");
+        
+        //On va ajouter un petit formulaire contenant un bouton,
+        //  l'"action" de ce formulaire c'set l'URL de la Servlet qui va recevoir l'information,
+        //  la "method" de soumission c'est "POST" parqu'il s'agit d'ajouter quelque chose au caddie. 
+        out.print("<form action=\"addToCart\" method=\"POST\">");
+        //Au milieu on va ajouter un champ de type "hidden", le paramètre qui va être envoyé à la Servlet c'est "identifiant"
+        //Et la valeur, on la connaît, elle sera en dur. Il va s'agir de l'identifiant de l'oeuvre dont l'on affiche le descriptif.
+        //  Pour la "value" l'intervennat a fait une concaténation, mais je ne vois pas pourquoi ???
+        out.print("<input type=\"hidden\" name=\"identifiant\" value=\""+work.getId()+"\">");
+        //Il faut également ajouter un bouton de soumission de ce formulaire, la "value" sera le petit libellé sur le bouton
+        out.print("<input type=\"submit\" value=\"Ajouter au caddie\">");
+
+        out.print("</form>");
         out.print("</body></html>");
     }
 }
