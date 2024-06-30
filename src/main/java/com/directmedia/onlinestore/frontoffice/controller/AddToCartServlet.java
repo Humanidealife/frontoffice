@@ -93,9 +93,11 @@ public class AddToCartServlet extends HttpServlet {
         
         //Maintenant on a retrouver notre oeuvre et on l'a ajoutée au caddie d'achat, on va retourner un messsage à l'utilisateur
         PrintWriter out = response.getWriter();
-        //On va afficher un de HTML, entre () on va affichier la taille du caddie
+        //On va afficher un peu de HTML(Ici on met des balises strictement nécessaires,on ne va pas faire de superflux, on va savoir plus tard pourquoi), 
+        //  entre [] on va affichier la taille du caddie
         //On ajoute enfin un lien pour retourner au Catalogue
-        out.print("<html><body>L'oeuvre choisie est bien ajoutée au cadddie("+ cart.getItems().size() +")<br><a href=\"catalogue\">Retour au catalogue</a></body></html>");
+        out.print("<html><body>L'oeuvre choisie est bien ajoutée au cadddie["+ cart.getItems().size() + " oeuvre(s)]<br>");
+        out.print("<a href=\"catalogue\">Retour au catalogue</a></body></html>");
         
     }
 
