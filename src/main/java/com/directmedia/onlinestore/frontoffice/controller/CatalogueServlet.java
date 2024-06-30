@@ -85,9 +85,8 @@ public class CatalogueServlet extends HttpServlet {
         for (Work work : Catalogue.listOfWorks) {
             out.println("<a href=\"work-details?id=" + work.getId() + "\">" + work.getTitle()+ "("+work.getRelease()+ ")</a><BR/>");
         }
-        
+        out.print("<a href=\"home\">Cliquer ici pour retourner à la page d'accueil</a>");
         out.print("</body></html>");
     }
         
-
 }
