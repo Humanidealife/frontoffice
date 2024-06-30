@@ -47,7 +47,8 @@ public class AddToCartServlet extends HttpServlet {
         //  Soit la Session existe déjà et on récupère la Session courante
         //  Soit la Session n'existe pas encore et en utilisant "request.getSession()" on va créer une nouvelle Session
         //  De cette Session, on va essayer de récupérer le caddie utilisateur avec "getAttribute".
-        //  Admettons que ce caddie soit stocké dans la Session sous la clé "cart". Nous seul savons que ce qui se trouve sous la clé "cart" (en Session) est un "ShoppingCart",
+        //  Admettons que ce caddie soit stocké dans la Session sous la clé "cart".
+        //  Nous seul savons que ce qui se trouve sous la clé "cart" (en Session) est un "ShoppingCart",
         //  nous devons donc caster(pour récupérer) ce résultat "ShoppingCart",
         //  et nous allons stocker ce résultat dans une variable de type "ShoppingCart"
         ShoppingCart cart = (ShoppingCart)request.getSession().getAttribute("cart");
@@ -93,7 +94,8 @@ public class AddToCartServlet extends HttpServlet {
         //Maintenant on a retrouver notre oeuvre et on l'a ajoutée au caddie d'achat, on va retourner un messsage à l'utilisateur
         PrintWriter out = response.getWriter();
         //On va afficher un de HTML, entre () on va affichier la taille du caddie
-        out.print("<html><body>L'oeuvre choisie est bien ajoutée au cadddie("+ cart.getItems().size() +")<br></body></html>");
+        //On ajoute enfin un lien pour retourner au Catalogue
+        out.print("<html><body>L'oeuvre choisie est bien ajoutée au cadddie("+ cart.getItems().size() +")<br><a href=\"catalogue\">Retour au catalogue</a></body></html>");
         
     }
 
