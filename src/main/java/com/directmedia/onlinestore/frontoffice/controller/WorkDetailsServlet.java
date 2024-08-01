@@ -6,6 +6,7 @@ package com.directmedia.onlinestore.frontoffice.controller;
 
 import com.directmedia.onlinestore.core.entity.Catalogue;
 import com.directmedia.onlinestore.core.entity.Work;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -64,6 +65,13 @@ public class WorkDetailsServlet extends HttpServlet {
                 break;
             }
         }
+        //Premièrement on va stocker dans le Scope "request" cette oeuvre sélectionnée.
+        request.setAttribute("work", work);
+        //Ensuite on délègue le traitement d'affichage à une page JSP
+        RequestDispatcher disp = request.getRequestDispatcher("/work-details.jsp");
+        disp.forward(request, response);
+        
+        /* MVC, cette partie va être déléguée à une page JSP
         //On va bien sûr faire en sorte que dans le catalogue le lien cliquable fournit cet "id", on va faire cela ultérieurement
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -92,5 +100,6 @@ public class WorkDetailsServlet extends HttpServlet {
 
         out.print("</form>");
         out.print("</body></html>");
+        */
     }
 }
