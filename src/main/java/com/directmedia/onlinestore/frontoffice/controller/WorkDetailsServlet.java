@@ -68,7 +68,7 @@ public class WorkDetailsServlet extends HttpServlet {
         //Premièrement on va stocker dans le Scope "request" cette oeuvre sélectionnée.
         request.setAttribute("work", work);
         //Ensuite on délègue le traitement d'affichage à une page JSP
-        RequestDispatcher disp = request.getRequestDispatcher("/work-details.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/work-details.jsp");
         disp.forward(request, response);
         
         /* MVC, cette partie va être déléguée à une page JSP
